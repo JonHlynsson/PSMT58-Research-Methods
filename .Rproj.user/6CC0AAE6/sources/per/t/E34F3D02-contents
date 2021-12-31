@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Group assignment: Home"
 output: 
   html_document:
     theme: cerulean
@@ -12,12 +12,9 @@ citation-style: apa-annotated-bibliography.csl
 ![](images/Banner.jpg)
 
 <div class="center">
-# **Group assignment**
-
-
 
 ### Authors 
-<br>
+
 Alicia Lenander<br>Aleksandra Mandić<br>Eva Dickmänken<br>Hannah Logemann<br>Jon Ingi Hlynsson
 </div>
 

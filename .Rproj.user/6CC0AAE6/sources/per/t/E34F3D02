@@ -3,7 +3,7 @@
     "path": "~/GitHub/PSMT58-Research-Methods/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "3285195913",
+    "hash": "3597090541",
     "contents": "",
     "dirty": false,
     "created": 1640965410642.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "14,4",
-        "scrollLine": "11"
+        "cursorPosition": "15,0",
+        "scrollLine": "12"
     },
     "folds": "",
-    "lastKnownWriteTime": 1640967843,
+    "lastKnownWriteTime": 1640968388,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1640967843917,
+    "last_content_update": 1640968388690,
     "read_only": false,
     "read_only_alternatives": []
 }
