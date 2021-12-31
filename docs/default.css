@@ -43,3 +43,7 @@ strong {
   text-justify: inter-word;
 }
 
+
+.center {
+text-align: center;
+}

@@ -1,16 +1,16 @@
 name: "Group assignment"
 icon: fa-empire
 navbar:
-  title: "Group assignment"
+  title: "PSMT58: Research Methods I"
   left:
-    - text: "Home"
+    - text: "Group assignment: Home"
       href: index.html
       icon: fa-home
-    - text: "Slides"
+    - text: "Group assignment: Slides"
       href: Links.html
       icon: fa-film
 output_dir: "docs"
 
 
-# fa-resistance - fa-file-text - fa-r-project
+# fa-resistance - fa-file-text - fa-r-project - fa-film 
 # https://www.w3schools.com/icons/icons_reference.asp

@@ -1,23 +1,30 @@
 ---
-title: "Home"
+title: ""
 output: 
   html_document:
-    theme: flatly
+    theme: cerulean
     css: default.css
+bibliography: refs.bib
+citation-style: apa-annotated-bibliography.csl
 ---
 
 
 ![](images/Banner.jpg)
 
-
+<div class="center">
 # **Group assignment**
 
-### Authors 
-Alicia Lenander<br>Aleksandra Mandić<br>Eva Dickmänken<br>Hannah Logemann<br>Jon Ingi Hlynsson
 
+
+### Authors 
+<br>
+Alicia Lenander<br>Aleksandra Mandić<br>Eva Dickmänken<br>Hannah Logemann<br>Jon Ingi Hlynsson
+</div>
+
+<br><br><br>
 Welcome to our landing page for the group assignment. Here you can find all data related the assignment in the course **PSMT58: Research Methods I**.
 
-This assignment is a review and reproduction of study 1  Wilson & Rule (2015): Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes.
+This assignment is a review and reproduction of study 1 @wilsonFacialTrustworthinessPredicts2015: Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes.
 
 <br><br>
 
@@ -28,6 +35,8 @@ Special thanks to [Mats Nilsson](https://www.su.se/profiles/matni-1.184039), the
 
 <br><br><br><br><br><br><br><br>
 
+### References 
+<div id="refs"></div>
 
 <hr>
 `r r2symbols::symbol("copyright")` Site maintained by Jon Ingi Hlynsson - last edited `r Sys.Date()`
