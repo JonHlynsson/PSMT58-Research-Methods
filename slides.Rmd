@@ -67,7 +67,7 @@ Alicia Lenander<br>Aleksandra Mandić<br>Eva Dickmänken<br>Hannah Logemann<br>J
 # (a) Causal problem
 ]
 
-In Wilson's (2018) study 1, the researchers hypothesized that inmates who look less trustworthy were more likely to receive death sentences.
+In Wilson's (2015) study 1, the researchers hypothesized that inmates who look less trustworthy were more likely to receive death sentences.
 
 The research's aim is to infer the *population average treatment effect* (PATE) of receiving a sentence among potential inmates as predicted by: 
 
@@ -502,6 +502,12 @@ class: inverse center middle
 # Thank you for your attention
 
 
+---
+
+
+# References
+
+Wilson, J. P., & Rule, N. O. (2015). Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes. *Psychological Science, 26*(8), 1325–1331. https://doi.org/10.1177/0956797615590992
 
 ```{r, include=F}
 library(DiagrammeR)
