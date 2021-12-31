@@ -1,0 +1,25 @@
+---
+title: "About"
+output: 
+  html_document:
+    theme: flatly
+    toc: no
+    toc_float: no
+    css: default.css
+---
+
+#
+
+![](images/Banner.jpg)
+<hr>
+
+### 
+
+
+<hr>
+
+
+
+
+<br><br><br><br><br><br><br><br><hr>
+`r r2symbols::symbol("copyright")` Jon Ingi Hlynsson - last edited `r Sys.Date()`

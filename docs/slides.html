@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Group assigment</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Alicia Lenander Aleksandra Mandić Eva Dickmänken Hannah Logemann Jón Ingi Hlynsson" />
+    <meta name="date" content="2021-12-31" />
+    <script src="site_libs/header-attrs/header-attrs.js"></script>
+    <script src="site_libs/kePrint/kePrint.js"></script>
+    <link href="site_libs/lightable/lightable.css" rel="stylesheet" />
+    <script src="site_libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="site_libs/viz/viz.js"></script>
+    <link href="site_libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+    <script src="site_libs/grViz-binding/grViz.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+class: center, middle
+background-image: url(https://www.amscins.com/wp-content/uploads/2011/05/Stockholm-university.jpg)
+background-size: 125px
+background-position: 5% 92%
+
+# Group assignment
+
+### Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes - Wilson &amp; Rule (2015)
+
+Alicia Lenander&lt;br&gt;Aleksandra Mandić&lt;br&gt;Eva Dickmänken&lt;br&gt;Hannah Logemann&lt;br&gt;Jón Ingi Hlynsson
+
+
+
+#### Stockholm University 
+
+#### Date last edited: 2021-12-31
+
+---
+
+.center[
+# (a) Causal problem
+]
+
+In Wilson's (2018) study 1, the researchers hypothesized that inmates who look less trustworthy were more likely to receive death sentences.
+
+The research's aim is to infer the *population average treatment effect* (PATE) of receiving a sentence among potential inmates as predicted by: 
+
+
+???
+
+In this presentation we will go over the main results, highlight its main findings, strengths and weaknesses
+
+--
+
+
+- Facial trustworthiness, 
+- Afrocentricity, 
+- Attractiveness, 
+- Facial maturity, 
+- Facial width-to-height ratio, 
+- Presence of glasses, and 
+- Presence of tattoos.
+
+
+---
+
+
+
+
+
+
+## Boxplot for outliers
+
+
+.pull-left[In the boxplot we can see that there are no substantial outliers in the data.]
+
+
+
+.pull-right[
+![](slides_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+]
+
+---
+
+
+.center[
+# (b) Main variables relevant to the causal problem
+]
+
+
+.pull-left[**Logistic Regression**
+
+**Independent variable**: Trustworthiness (1 = not at all trustworthy, 8 = very trustworthy)
+
+**Dependent variable**: Sentence (0 = Life, 1 = Death)
+]
+
+--
+
+.pull-right[**Covariates**:
+
+-   Afrocentricity (we assume: 1 = not at all afroc., 8 = very afroc.)
+-   Attractiveness (we assume: 1 = not at all attractive, 8 = very attractive)
+-   Facial Maturity (we assume: 1 = not at all attractive, 8 = very attractive)
+-   Facial width-to-height ratio (fWHR)
+-   Presence of glasses (1=Yes, 0=No)
+-   Presence of tattoos (1=Yes, 0=No)
+]
+---
+
+### Effects plot of the ANOVA
+
+.pull-left[
+As can be seen in the figure, there was no interaction between race and trustworthiness. Hence, race was omitted from the **logistic regression**.
+]
+
+.pull-right[
+![](slides_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
+---
+
+
+.center[
+# (c) Study design
+]
+
+The study is a a natural (*quasi-experimental*) observational experiment.
+![](https://raw.githubusercontent.com/JonHlynsson/Psych/main/Images/StudyDesign.jpg)
+
+
+
+---
+
+
+.center[
+# (d) Threats to validity and design tricks for improved validity.
+]
+
+-   No information concerning the scales for afrocentricity, attractiveness, facial maturity
+-   Few participants with tattoos and glasses
+
+
+--
+
+
+Design element: **Nonequivalent dependent variable**
+
+--
+
+-   e.g., how ***friendly*** does the inmate look
+-   e.g., how ***happy*** does the inmate look
+
+
+
+???
+
+We will talk more about threats to internal validity in the **weeknesses** section.
+
+only 14 targets with tattoos and 7 with glasses
+
+
+A nonequivalent dependent variable is a design element suggested by Campbell and is defined as something that's  affected by the treatment condition but independent of the dependent variable.
+
+HOWEVER, friendliness and trust probably correlate - BUT we would need to test that.
+
+Essentially make the raters judge them on perceived happiness and trustworthiness or freindliness and trustworthiness.
+
+
+
+---
+
+
+
+
+
+
+
+.center[
+## Logistic regression models
+]
+
+
+**Table 1. Odds ratios and compatibility intervals**
+&lt;table class=" lightable-classic-2 table" style="font-family: Times; margin-left: auto; margin-right: auto; font-family: Times; "&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; OR &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 2.5 % &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 97.5 % &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr grouplength="2"&gt;&lt;td colspan="4" style="border-bottom: 0;"&gt;&lt;strong&gt;Model 1&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.68 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.58 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Trustworthiness &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.70 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.54 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.90 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="8"&gt;&lt;td colspan="4" style="border-bottom: 0;"&gt;&lt;strong&gt;Model 2&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; (Intercept) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8.83 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.82 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 44.16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Trustworthiness &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.66 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.50 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.89 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Afrocentricity &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.79 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.67 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.92 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Attractiveness &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.85 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.64 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Maturity &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.87 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.73 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.04 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Facial width-to-height ratio (fWHR) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.39 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.18 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.64 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Presence of glasses &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.56 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.02 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.41 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Presence of tattoos &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.58 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.19 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.76 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+.center[
+# (e) Key result
+]
+
+-   **Model 1**: Targets perceived as less trustworthy were more likely to be sentenced to death.
+
+
+-   **Model 2**: Along with trustworthiness, Afrocentricity was negatively associated with the death sentence and fWHR and the presence of glasses were positively associated with the death sentence.
+
+
+---
+
+.center[
+# (f) Effect size estimate(s)
+]
+
+**ANOVA** - `\(\eta_{\text{p}}^{2}\)`
+
+-   Since partial eta squared always carries a positive bias, they could have also reported Omega squared Logistic regression - `\(\Delta{\text{x}^{2}}\)` and Odds ratio.
+
+
+-   Odds ratio was used as effect size for the individual predictors tested 
+
+-   CI for Odds ratio was reported
+
+-   `\(\Delta{\text{x}^{2}}\)` was used to test the fit of the models
+
+-   `\(R^2\)` could have been reported to show variance elucidation in general
+
+
+???
+
+OR &gt; 1 means an increasement in Odds, and OR  &lt; 1 means a decreasement in Odds
+
+`\(\Delta{\text{x}^{2}}\)`: (Does the data deviate significantly from the assumptions of the model? -&gt; Significance shows that the model does not fit well)
+
+
+
+---
+class: inverse center middle
+
+# Strengths and weaknesses.
+
+---
+
+.center[
+# Strengths 
+]
+
+--
+
+
+**Real inmates**: Construct validity &amp; External validity 
+
+???
+-&gt; People who have actually been convicted are used in the study. Actual measurement of inmates means that we are measuring people who have been convicted
+
+--
+
+**Matching**: Internal/Construct validity 
+
+???
+-&gt; They have equal groups and pave the way for making causal inferences
+
+--
+
+**Grayscale images**: Construct validity 
+
+???
+-&gt; Death sentence and life sentence inmates wear different colored clothes; thus grayscale images hinder the possibility of participants guessed/knew what sentence inmates received a priori. This constitutes blinding of outcome among raters.
+
+--
+
+**Well defined sample**, restricted on sex and race: Internal validity/Construct validity 
+
+???
+Almost complete "population" of death sentenced inmates in sample (given sex and race). Big sample size (observations among participants) which increases our confidence in the causal conclusion.
+
+--
+
+**Different raters for trustworthiness and covariates**: Construct validity
+
+???
+The ratings of trust don't affect the ratings of the covariates (continuation of "biased" pattern does not continue (IF there was a pattern))
+
+---
+.center[
+# Weaknesses
+]
+
+--
+
+**Unequal inmates with glasses and tattoos** making them hard to infer about
+
+???
+All types of validity -&gt;
+- 14 people with tattoos [7/7 in each group]
+- 115 with glasses [50/65 in each group]
+- 742 observations in total 
+
+--
+
+**Low Cronbach’ s Alpha**: Statistical conclusion validity 
+
+???
+
+-&gt; .72 for trust which has the highest coefficient of determination `\(R^2\)` 
+Note: 8 point scale, it is perhaps unintuitive – however using a finer scale leads to a loss in variability in the answers.
+
+--
+
+**Info given to participants unclear**: Internal/Construct validity 
+
+???
+Hard to replicate this study, even given data and OS, on the basis that we have no clue what prior to the study about the inmates
+
+--
+
+**Photos taken after sentencing**: Internal validity 
+
+???
+-&gt; Perhaps a death sentence has an effect on perceived trustworthiness compared to life sentence. 
+
+
+--
+
+
+- *Reverse causation* is a possibility here. 
+
+
+--
+
+**Age not controlled for**: Internal/Construct validity 
+
+
+???
+Potential confounder; IF it is a confounder, then it is related to BOTH outcome) and exposure
+
+
+---
+class: inverse center middle
+
+# Thank you for your attention
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

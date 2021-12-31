@@ -1,0 +1,27 @@
+---
+title: "Slides"
+output:  
+  html_document:
+    theme: flatly
+    css: default.css
+---
+
+
+![](images/Banner.jpg)
+
+
+
+```{r, echo=F}
+library(xaringanExtra)
+embed_xaringan(url = "slides.html", border = "none")
+```
+
+
+[**Click here**](docs/slides.html) to open the slides in a new window.
+
+
+[**Click here**]
+
+
+<br><br><br><br><br><br><br><br><hr>
+`r r2symbols::symbol("copyright")` Jon Ingi Hlynsson - last edited `r Sys.Date()`

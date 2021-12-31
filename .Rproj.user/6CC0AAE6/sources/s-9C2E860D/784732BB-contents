@@ -1,0 +1,16 @@
+name: "Group assignment"
+icon: fa-empire
+navbar:
+  title: "Group assignment"
+  left:
+    - text: "Home"
+      href: index.html
+      icon: fa-home
+    - text: "Slides"
+      href: Links.html
+      icon: fa-film
+output_dir: "docs"
+
+
+# fa-resistance - fa-file-text - fa-r-project
+# https://www.w3schools.com/icons/icons_reference.asp
