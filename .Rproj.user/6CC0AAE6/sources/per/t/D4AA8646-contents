@@ -12,6 +12,7 @@ output:
 
 # The slides
 
+
 ```{r, echo=F}
 library(xaringanExtra)
 embed_xaringan(url = "slides.html", border = "none")
