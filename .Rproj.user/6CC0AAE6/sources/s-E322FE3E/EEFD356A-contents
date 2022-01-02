@@ -397,6 +397,11 @@ $OR$ = Odds ratio
 Partial eta squared carries a statistical bias – a lot of scientist don’t use it as an effect size anymore – Omega squared does not carry the same positive bias, epsilon squared could also have been a wise alternative 
 
 
+**Source**: Richardson, J. T. E. (2011). Eta squared and partial eta squared as measures of effect size in educational research. Educational Research Review, 6(2), 135–147. https://doi.org/10.1016/j.edurev.2010.12.001
+
+Yigit, S., & Mendes, M. (2018). Which effect size measure is appropriate for one-way and two-way ANOVA models? A Monte Carlo simulation study. Revstat Statistical Journal, 16(3), 295–313.
+
+
 ---
 class: inverse center middle
 
