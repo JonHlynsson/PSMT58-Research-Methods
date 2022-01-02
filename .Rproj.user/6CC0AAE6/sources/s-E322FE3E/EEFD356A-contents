@@ -393,7 +393,8 @@ $\Delta{\text{x}^{2}}$: (Does the data deviate significantly from the assumption
 $\mathcal{O}^{2}$ is = Omega squared
 $OR$ = Odds ratio
 
-
+**Notes**:
+Partial eta squared carries a statistical bias – a lot of scientist don’t use it as an effect size anymore – Omega squared does not carry the same positive bias, epsilon squared could also have been a wise alternative 
 
 
 ---
