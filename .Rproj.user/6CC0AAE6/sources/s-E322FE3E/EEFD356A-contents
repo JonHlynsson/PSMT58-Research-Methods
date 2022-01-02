@@ -30,8 +30,6 @@ knitr::opts_chunk$set(
   warning = FALSE,
   hiline = TRUE
 )
-#fig.width=20, fig.height=15, fig.retina=13
-# https://scontent-arn2-2.xx.fbcdn.net/v/t1.6435-9/49625893_10158449283896980_6346470992008708096_n.png?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=viC67fSTHZEAX_YQVZk&_nc_ht=scontent-arn2-2.xx&oh=00_AT_tC-v9RCri9Ga_1-6khqI8owaASjBwNO-m4lwIWJgLyw&oe=61EE1A0E
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -262,7 +260,6 @@ The study is a a natural (*quasi-experimental*) observational experiment.
 Design element: **Nonequivalent dependent variable**
 
 --
-
 -   e.g., how ***friendly*** does the inmate look
 -   e.g., how ***happy*** does the inmate look
 
@@ -373,14 +370,14 @@ Models %>% kable(digits = 2, align = c("l", "c", "c", "c"), format = "html") %>%
 # (f) Effect size estimate(s)
 ]
 
-**ANOVA** - $\eta_{\text{p}}^{2}$
+**ANOVA**–Partial eta squared: $\eta_{\text{p}}^{2}$
 
--   Since partial eta squared always carries a positive bias, they could have also reported Omega squared Logistic regression - $\Delta{\text{x}^{2}}$ and Odds ratio.
+-   Since $\eta_{\text{p}}^{2}$ always carries a positive bias, they could have also reported  $\mathcal{O}^{2}$ Logistic regression - $\Delta{\text{x}^{2}}$ and $OR$.
 
 
--   Odds ratio was used as effect size for the individual predictors tested 
+-   $OR$ was used as effect size for the individual predictors tested 
 
--   CI for Odds ratio was reported
+-   Compatibility intervals for $OR$ was reported
 
 -   $\Delta{\text{x}^{2}}$ was used to test the fit of the models
 
@@ -392,6 +389,10 @@ Models %>% kable(digits = 2, align = c("l", "c", "c", "c"), format = "html") %>%
 OR > 1 means an increasement in Odds, and OR  < 1 means a decreasement in Odds
 
 $\Delta{\text{x}^{2}}$: (Does the data deviate significantly from the assumptions of the model? -> Significance shows that the model does not fit well)
+
+$\mathcal{O}^{2}$ is = Omega squared
+$OR$ = Odds ratio
+
 
 
 
