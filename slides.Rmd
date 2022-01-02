@@ -385,8 +385,6 @@ Models %>% kable(digits = 2, align = c("l", "c", "c", "c"), format = "html") %>%
 
 **ANOVA**–Partial eta squared: $\eta_{\text{p}}^{2}$
 
--   Since $\eta_{\text{p}}^{2}$ always carries a positive bias, they could have also reported  $\mathcal{O}^{2}$ Logistic regression - $\Delta{\text{x}^{2}}$ and $OR$.
-
 
 -   $OR$ was used as effect size for the individual predictors tested 
 
@@ -395,6 +393,8 @@ Models %>% kable(digits = 2, align = c("l", "c", "c", "c"), format = "html") %>%
 -   $\Delta{\text{x}^{2}}$ was used to test the fit of the models
 
 -   $R^2$ could have been reported to show variance elucidation in general
+
+-   Since $\eta_{\text{p}}^{2}$ always carries a positive bias, they could have also reported  $\omega^{2}$ Logistic regression
 
 
 ???

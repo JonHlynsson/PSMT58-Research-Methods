@@ -3,7 +3,7 @@
     "path": "~/GitHub/PSMT58-Research-Methods/slides.Rmd",
     "project_path": "slides.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "2877348880",
     "contents": "",
     "dirty": false,
     "created": 1640965458318.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "47,27",
-        "scrollLine": "41"
+        "cursorPosition": "396,127",
+        "scrollLine": "383"
     },
     "folds": "",
-    "lastKnownWriteTime": 1641136907,
+    "lastKnownWriteTime": 1641138607,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1641136907285,
+    "last_content_update": 1641138607704,
     "read_only": false,
     "read_only_alternatives": []
 }
