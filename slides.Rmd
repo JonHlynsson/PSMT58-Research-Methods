@@ -111,6 +111,8 @@ cat("\014") # clear the console
 # DCNum_MatchedControl ->	ID number in DoC database for 2nd control group. Only rated on trustworthiness (Trust2). All DC numbers for death are same as in DCNum variable, only Life controls are unique
 
 
+## The seed was NOT set any random variables  ----
+
 ## The variables used in the result section ------------------------------------
 # sent - DV
 # trust - IV
@@ -135,7 +137,8 @@ library(rstanarm) # For Bayesian analysis
 
 ## Read in data ----
 d_full <- read.table("Study1_Data_Hand_In.txt", header = TRUE, sep = ";")
-## ----
+
+## select the relevant variables to replicate study 1 ----
 d <- d_full[, c("race", "sent", "trust", "zAfro", "attract", "maturity", "zfWHR", "glasses", "tattoos")]
 ```
 
@@ -164,6 +167,7 @@ str(d)
 
 ```{r, fig.align='center', echo=F, eval=requireNamespace("showtext", quietly=TRUE) && requireNamespace("ggplot2", quietly=TRUE), message=F, warning=F, error=F}
 library(ggsci)
+# make boxplot
 b <- ggboxplot(x = "sent", y = "trust", color = "race", data = d, 
           xlab = "Type of sentence", ylab = "Trustworthiness", 
           outlier.shape = 21, legend.title = "Race", bxp.errorbar = T, 
@@ -175,6 +179,7 @@ b <- ggboxplot(x = "sent", y = "trust", color = "race", data = d,
 
 .pull-right[
 ```{r, echo=F, eval=requireNamespace("showtext", quietly=TRUE) && requireNamespace("ggplot2", quietly=TRUE), message=F, warning=F, error=F}
+# print boxplot
 b
 ```
 ]
@@ -216,6 +221,7 @@ As can be seen in the figure, there was no interaction between race and trustwor
 .pull-right[
 ```{r, echo=F, warning=FALSE, eval=requireNamespace("showtext", quietly=TRUE) && requireNamespace("ggplot2", quietly=TRUE)}
 library(ggpubr)
+# do an effects plot
 g <- ggline(data = d, 
        x = "sent", 
        y = "trust", 
@@ -287,7 +293,7 @@ Essentially make the raters judge them on perceived happiness and trustworthines
 # turn off factors for DV
 sent_new <- as.numeric(d$sent)
 sent_new <- sent_new - 1
-summary(sent_new) # check if it worked
+summary(sent_new) # sanity check - to check if it worked
 
 ## model 1 
 glm1 <- glm(formula = sent ~ trust, data = d, family = binomial(link = "logit"))
@@ -298,7 +304,7 @@ summary(glm1)
 model_1_stats <- exp(cbind(OR = (coef(glm1)), confint(glm1, level = 0.95))) 
 model_1_stats
 
-##  Bayesian analysis for model 1
+##  Bayesian analysis for model 1 - this is not used in the presentation and is done to further our own understanding of the data 
 B_glm1 <- stan_glm(formula = sent ~ trust, data = d, family = "binomial", 
                    refresh = F, seed = 123)
 summary(B_glm1)
@@ -326,6 +332,10 @@ glm2 <- glm(sent ~ trust +
 
 summary(glm2) # not exactly the same results but close: 
 #               afro IS supposed to be significant
+#             - note: we do not care for significance persay 
+#                     this note is only here to show that we 
+#                     looked at the data and thought about 
+#                     it!
 
 model_2_stats <- exp(cbind(OR = coef(glm2), confint(glm2))) # 
 model_2_stats
@@ -338,12 +348,15 @@ model_2_stats
 
 **Table 1. Odds ratios and compatibility intervals**
 ```{r, echo=FALSE, warning=F, message=F}
-Models <- rbind(Model_1 = model_1_stats, Model_2 = model_2_stats)
+Models <- rbind(Model_1 = model_1_stats, Model_2 = model_2_stats) # bind stats for model 1 & 2
+
+# give rows meaningful names
 row.names(Models) <- c("(Intercept)", "Trustworthiness", "(Intercept)", "Trustworthiness",
                    "Afrocentricity", "Attractiveness", "Maturity",
                    "Facial width-to-height ratio (fWHR)",
                    "Presence of glasses", "Presence of tattoos")
 
+# Print the models
 Models %>% kable(digits = 2, align = c("l", "c", "c", "c"), format = "html") %>% 
   kable_classic_2(html_font = "Times") %>% 
   kable_styling(html_font = "Times", full_width = T, position = "left",
@@ -518,6 +531,7 @@ Wilson, J. P., & Rule, N. O. (2015). Facial Trustworthiness Predicts Extreme Cri
 
 ```{r, include=F}
 library(DiagrammeR)
+# this was an attempt to to a flow chart in R - it failed
 grViz(diagram = "digraph flowchart {
   node [fontname = times, shape = oval]
   tab1 [label = '@@1']
