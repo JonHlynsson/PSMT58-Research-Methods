@@ -1,9 +1,9 @@
 {
     "id": "EEFD356A",
-    "path": "~/GitHub/PSMT58-Research-Methods/slides.Rmd",
-    "project_path": "slides.Rmd",
+    "path": "~/GitHub/PSMT58-Research-Methods/slidesfix.Rmd",
+    "project_path": "slidesfix.Rmd",
     "type": "r_markdown",
-    "hash": "3312030136",
+    "hash": "3656481653",
     "contents": "",
     "dirty": false,
     "created": 1640965458318.0,
@@ -12,15 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "527,3",
-        "scrollLine": "507"
+        "cursorPosition": "329,86",
+        "scrollLine": "324",
+        "last_setup_crc32": "A121508320710361"
     },
     "folds": "",
-    "lastKnownWriteTime": 1641139352,
+    "lastKnownWriteTime": 1641222464,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1641139352857,
+    "last_content_update": 1641222464550,
     "read_only": false,
     "read_only_alternatives": []
 }

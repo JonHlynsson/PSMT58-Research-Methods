@@ -15,7 +15,7 @@ output:
 
 ```{r, echo=F}
 library(xaringanExtra)
-embed_xaringan(url = "slides.html", border = "none")
+embed_xaringan(url = "slidesfix.html", border = "none")
 ```
 
 
