@@ -19,13 +19,13 @@ embed_xaringan(url = "slidesfix.html", border = "none")
 ```
 
 
-[**Click here**](https://jonhlynsson.github.io/PSMT58-Research-Methods/slides.html) to open the slides in a new window.
+[**Click here**](https://jonhlynsson.github.io/PSMT58-Research-Methods/slidesfix.html) to open the slides in a new window.
 
 
 [**Click here**](https://github.com/JonHlynsson/PSMT58-Research-Methods/blob/main/Study1_Data_Hand_In.txt) to find the data in a .txt format for handing in the assignment.
 
 
-[**Click here**](https://github.com/JonHlynsson/PSMT58-Research-Methods/blob/main/slides.Rmd) to find the .Rmd file for this presentation. 
+[**Click here**](https://github.com/JonHlynsson/PSMT58-Research-Methods/blob/main/slidesfix.Rmd) to find the .Rmd file for this presentation. 
 
 <br><br><br><br><br><br><br><br><hr>
 `r r2symbols::symbol("copyright")` Site maintained by Jon Ingi Hlynsson - last edited `r Sys.Date()`
