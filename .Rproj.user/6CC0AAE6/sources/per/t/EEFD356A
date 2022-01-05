@@ -3,7 +3,7 @@
     "path": "~/GitHub/PSMT58-Research-Methods/slidesfix.Rmd",
     "project_path": "slidesfix.Rmd",
     "type": "r_markdown",
-    "hash": "910677031",
+    "hash": "2059220158",
     "contents": "",
     "dirty": false,
     "created": 1640965458318.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "528,2",
-        "scrollLine": "509",
+        "cursorPosition": "383,29",
+        "scrollLine": "364",
         "last_setup_crc32": ""
     },
     "folds": "",
-    "lastKnownWriteTime": 1641410103,
+    "lastKnownWriteTime": 1641412557,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1641410979394,
+    "last_content_update": 1641412557891,
     "read_only": false,
     "read_only_alternatives": []
 }

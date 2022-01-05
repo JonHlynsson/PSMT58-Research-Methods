@@ -364,17 +364,6 @@ model_2_stats
 **Model 1**: Targets perceived as less trustworthy were more likely to be sentenced to death.<br>
 **Model 2**: Along with trustworthiness, Afrocentricity was negatively associated with the death sentence and fWHR and the presence of glasses were positively associated with the death sentence.
 
-**Effect size estimate(s)**
--   $OR$ was used as effect size for the individual predictors tested 
--   Compatibility intervals for $OR$ was reported
--   $\Delta{\text{x}^{2}}$ was used to test the fit of the models
--   $R^2$ could have been reported to show variance elucidation in general
--   Since $\eta_{\text{p}}^{2}$ always carries a positive bias, they could have also reported  $\omega^{2}$ 
-
-]
-
-.pull-right[
-**Table 1. Odds ratios and compatibility intervals from the logistic regression models**
 ```{r, echo=FALSE, warning=F, message=F}
 Models <- rbind(Model_1 = model_1_stats, Model_2 = model_2_stats) # bind stats for model 1 & 2
 
@@ -386,17 +375,29 @@ row.names(Models) <- c("(Intercept)", "Trustworthiness", "(Intercept)", "Trustwo
 
 # Print the models
 Models %>% kable(digits = 2, align = c("l", "c", "c", "c"), format = "html", 
-                 # caption = "", 
+                 caption = "Table 1. Odds ratios and compatibility intervals: Logistic regression models", 
                  # table.attr = "style='width:30%;'"
                  ) %>% 
   kable_classic_2(html_font = "Times") %>% 
-  kable_styling(html_font = "Times", full_width = F, position = "left",
+  kable_styling(html_font = "Times", full_width = T, position = "left",
                 fixed_thead = F, 
-                font_size = 16
+                font_size = 9
                 ) %>% 
   kableExtra::group_rows(group_label = "Model 1", 1, 2) %>% 
   kableExtra::group_rows(group_label = "Model 2", 3, 10)
 ```
+]
+
+
+--
+
+.pull-right[
+**Effect size estimate(s)**
+-   $OR$ was used as effect size for the individual predictors tested 
+-   Compatibility intervals for $OR$ was reported
+-   $\Delta{\text{x}^{2}}$ was used to test the fit of the models
+-   $R^2$ could have been reported to show variance elucidation in general
+-   Since $\eta_{\text{p}}^{2}$ always carries a positive bias, they could have also reported  $\omega^{2}$ 
 ]
 
 
@@ -543,45 +544,6 @@ class: inverse center middle
 
 Wilson, J. P., & Rule, N. O. (2015). Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes. *Psychological Science, 26*(8), 1325–1331. https://doi.org/10.1177/0956797615590992
 
-```{r, include=F}
-library(DiagrammeR)
-# this was an attempt to to a flow chart in R - it failed
-grViz(diagram = "digraph flowchart {
-  node [fontname = times, shape = oval]
-  tab1 [label = '@@1']
-  tab2 [label = '@@2']
-  tab3 [label = '@@3']
-  
-  tab1 -> tab2 -> tab3;
-}
-  
-  [1]: 'Selection of raters (N = 42)'
-  [2]: 'Raters judge 742 inmates on trustworthiness'    
-  [3]: 'Statistics vs Mathematics Knowledge'    
-  ")
-
-grViz(diagram = "digraph flowchart {
-      # define node aesthetics
-      node [fontname = times, shape = oval, color = Lavender, style = filled]        
-      tab1 [label = '@@1']
-      tab2 [label = '@@2']
-      tab3 [label = '@@3']
-      tab4 [label = '@@4']
-# set up node layout
-      tab1 -> tab2;
-      tab2 -> tab3;
-      tab2 -> tab4
-      }
-[1]: 'Selection of raters (N = 42)'
-      [2]: 'Raters judge 742 inmates on trustworthiness'
-      [3]: 'Life sentence'
-      [4]: 'Death sentence'
-      ")
-```
 
 
-```{r, include=F}
-# to render rmarkdown::render(input = "Group assignment-EDIT3.Rmd")
-# rmarkdown::render(input = "Group assignment-EDIT-Again-25-dec.Rmd")
-```
 
