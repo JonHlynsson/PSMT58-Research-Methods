@@ -4,14 +4,14 @@
     <title>Group assigment</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alicia Lenander Aleksandra Mandić Eva Dickmänken Hannah Logemann Jón Ingi Hlynsson" />
-    <meta name="date" content="2022-01-04" />
+    <meta name="date" content="2022-01-05" />
     <script src="site_libs/header-attrs/header-attrs.js"></script>
-    <script src="site_libs/kePrint/kePrint.js"></script>
-    <link href="site_libs/lightable/lightable.css" rel="stylesheet" />
     <script src="site_libs/htmlwidgets/htmlwidgets.js"></script>
     <script src="site_libs/viz/viz.js"></script>
     <link href="site_libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
     <script src="site_libs/grViz-binding/grViz.js"></script>
+    <script src="site_libs/kePrint/kePrint.js"></script>
+    <link href="site_libs/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -37,12 +37,12 @@ Alicia Lenander&lt;br&gt;Aleksandra Mandić&lt;br&gt;Eva Dickmänken&lt;br&gt;Ha
 
 #### Stockholm University 
 
-#### Date last edited: 2022-01-04
+#### Date last edited: 2022-01-05
 
 ---
 
 .center[
-# (a) Causal problem
+# Causal problem
 ]
 
 In Wilson's (2015) study 1, the researchers hypothesized that inmates who look less trustworthy were more likely to receive death sentences.
@@ -74,7 +74,7 @@ In this presentation we will go over the main results, highlight its main findin
 
 
 .center[
-# (b) Main variables relevant to the causal problem
+# Main variables relevant to the causal problem
 ]
 
 
@@ -111,34 +111,43 @@ As can be seen in the figure, there was no interaction between race and trustwor
 
 
 .center[
-# (c) Study design
+# The pipeline
 ]
+
+
+.pull-left[
+
+**Study design**.
 
 The study is a a natural (*quasi-experimental*) observational experiment.
-![](https://raw.githubusercontent.com/JonHlynsson/Psych/main/Images/StudyDesign.jpg)
+
+<div id="htmlwidget-479970b8e6b5eb11a5f1" style="width:504px;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-479970b8e6b5eb11a5f1">{"x":{"diagram":"digraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [fontname = arial, shape = box, color = \"#1381B0\", style = \"filled\"]\n  tab1 [label = <Selection of inmate pictures matched for race (N<FONT POINT-SIZE=\"8\"><SUB>Total<\/SUB><\/FONT>= 742; N<FONT POINT-SIZE=\"8\"><SUB>Death<\/SUB><\/FONT>= 371, N<FONT POINT-SIZE=\"8\"><SUB>Life<\/SUB><\/FONT>= 371)>, fontcolor = \"#f0f0f0\"]\n  tab2 [label = \"Research assistant coded\\n glasses and tattoos\", fontcolor = \"#f0f0f0\"]\n  tab3 [label = \"Raters judge inmates on trustworthiness (N = 208);\\nRaters judge covariates (N = 141)\", fontcolor = \"#f0f0f0\"]\n  tab4 [label = \"Facial width-to-height ratio\\n (fWHR) measured\", fontcolor = \"#f0f0f0\"]\n  tab5 [label = \"Data analysis\", shape = \"oval\", fontcolor = \"#f0f0f0\"]\n  \n  tab1 -> tab2 -> tab5 [arrowhead = vee]\n  tab1 -> tab3 -> tab5 [arrowhead = vee]\n  tab1 -> tab4 -> tab5 [arrowhead = vee]\n  \n  \n}\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
-
----
-
-
-.center[
-# (d) Threats to validity and design tricks for improved validity.
+<div id="htmlwidget-93f155adcd5f85c20187" style="width:150%;height:300%;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-93f155adcd5f85c20187">{"x":{"diagram":"digraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [fontname = arial, shape = box, color = \"#1381B0\", style = \"filled\"]\n  tab1 [label = <Selection of inmate pictures matched for race (N<FONT POINT-SIZE=\"8\"><SUB>Total<\/SUB><\/FONT>= 742; N<FONT POINT-SIZE=\"8\"><SUB>Death<\/SUB><\/FONT>= 371, N<FONT POINT-SIZE=\"8\"><SUB>Life<\/SUB><\/FONT>= 371)>, fontcolor = \"#f0f0f0\"]\n  tab2 [label = \"Research assistant coded\\n glasses and tattoos\", fontcolor = \"#f0f0f0\"]\n  tab3 [label = \"Raters judge inmates on trustworthiness (N = 208);\\nRaters judge covariates (N = 141)\", fontcolor = \"#f0f0f0\"]\n  tab4 [label = \"Facial width-to-height ratio\\n (fWHR) measured\", fontcolor = \"#f0f0f0\"]\n  tab5 [label = \"Data analysis\", shape = \"oval\", fontcolor = \"#f0f0f0\"]\n  \n  tab1 -> tab2 -> tab5 [arrowhead = vee]\n  tab1 -> tab3 -> tab5 [arrowhead = vee]\n  tab1 -> tab4 -> tab5 [arrowhead = vee]\n  \n  \n}\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
+
+
+
+--
+
+
+.pull-right[
+**Threats to validity and design tricks for improved validity.**
+
 
 -   No information concerning the scales for afrocentricity, attractiveness, facial maturity
 -   Few participants with tattoos and glasses
 
 
---
-
 
 Design element: **Nonequivalent dependent variable**
 
---
 -   e.g., how ***friendly*** does the inmate look
 -   e.g., how ***happy*** does the inmate look
-
+]
 
 
 ???
@@ -166,12 +175,20 @@ Essentially make the raters judge them on perceived happiness and trustworthines
 
 
 .center[
-# (e) Key result
+# Key result
 ]
 
 .pull-left[
--   **Model 1**: Targets perceived as less trustworthy were more likely to be sentenced to death.
--   **Model 2**: Along with trustworthiness, Afrocentricity was negatively associated with the death sentence and fWHR and the presence of glasses were positively associated with the death sentence.
+**Model 1**: Targets perceived as less trustworthy were more likely to be sentenced to death.&lt;br&gt;
+**Model 2**: Along with trustworthiness, Afrocentricity was negatively associated with the death sentence and fWHR and the presence of glasses were positively associated with the death sentence.
+
+**Effect size estimate(s)**
+-   `\(OR\)` was used as effect size for the individual predictors tested 
+-   Compatibility intervals for `\(OR\)` was reported
+-   `\(\Delta{\text{x}^{2}}\)` was used to test the fit of the models
+-   `\(R^2\)` could have been reported to show variance elucidation in general
+-   Since `\(\eta_{\text{p}}^{2}\)` always carries a positive bias, they could have also reported  `\(\omega^{2}\)` 
+
 ]
 
 .pull-right[
@@ -253,28 +270,9 @@ Essentially make the raters judge them on perceived happiness and trustworthines
 ]
 
 
----
-
-.center[
-# (f) Effect size estimate(s)
-]
-
-**ANOVA**–Partial eta squared: `\(\eta_{\text{p}}^{2}\)`
-
-
--   `\(OR\)` was used as effect size for the individual predictors tested 
-
--   Compatibility intervals for `\(OR\)` was reported
-
--   `\(\Delta{\text{x}^{2}}\)` was used to test the fit of the models
-
--   `\(R^2\)` could have been reported to show variance elucidation in general
-
--   Since `\(\eta_{\text{p}}^{2}\)` always carries a positive bias, they could have also reported  `\(\omega^{2}\)` 
-
-
 ???
 
+**ANOVA**–Partial eta squared: `\(\eta_{\text{p}}^{2}\)`
 OR &gt; 1 means an increasement in Odds, and OR  &lt; 1 means a decreasement in Odds
 
 `\(\Delta{\text{x}^{2}}\)`: (Does the data deviate significantly from the assumptions of the model? -&gt; Significance shows that the model does not fit well)
@@ -398,7 +396,11 @@ class: inverse center middle
 
 # Conclusion 
 
+--
+
 ### Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes 
+--
+
 
 &lt;br&gt;&lt;br&gt;
 ### Thank you for your attention

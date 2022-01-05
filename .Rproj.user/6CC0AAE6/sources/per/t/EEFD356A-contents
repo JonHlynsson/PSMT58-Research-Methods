@@ -62,7 +62,7 @@ Alicia Lenander<br>Aleksandra Mandić<br>Eva Dickmänken<br>Hannah Logemann<br>J
 ---
 
 .center[
-# (a) Causal problem
+# Causal problem
 ]
 
 In Wilson's (2015) study 1, the researchers hypothesized that inmates who look less trustworthy were more likely to receive death sentences.
@@ -93,25 +93,34 @@ In this presentation we will go over the main results, highlight its main findin
 rm(list = ls(all=T)) # remove all variables (all=T takes care of hidden objects)
 graphics.off() # turn off plots
 cat("\014") # clear the console
-## ----
+## Code book ----
 # stim ->	Stimulus Number
 # sent ->	Sentence: 1 = Death, 0 = Life
 # race -> Race: 1 = White, -1 = Black
 # glasses ->	Glasses: 1 = Yes, 0 = No
 # tattoos ->	Tattoos: 1 = Yes, 0 = No
 # trust ->	Trustworthiness (scale 1-8)
-# trust_2nd ->	Trustworthiness ratings with 2nd control group; Death targets are same as in primary analysis, Life targets are different
+# trust_2nd ->	Trustworthiness ratings with 2nd control group; 
+#               Death targets are same as in primary analysis, 
+#               Life targets are different
 # afro ->	raw Afrocentricity ratings
-# zAfro ->	Afrocentricity ratings normalized within target race. Analyses in paper were done with this variable
+# zAfro ->	Afrocentricity ratings normalized within target race. 
+#           Analyses in paper were done with this variable
 # attract ->	Attractiveness
 # fWHR ->	facial width-to-height
-# zfWHR ->	fWHR normalized within target race. Analyses in paper were done with this variable
+# zfWHR ->	fWHR normalized within target race. 
+#           Analyses in paper were done with this variable
 # maturity ->	Maturity
 # DCNum	-> ID number in Department of Corrections database
-# DCNum_MatchedControl ->	ID number in DoC database for 2nd control group. Only rated on trustworthiness (Trust2). All DC numbers for death are same as in DCNum variable, only Life controls are unique
+# DCNum_MatchedControl ->	ID number in DoC database for 2nd control group. 
+#                         Only rated on trustworthiness (Trust2). 
+#                         All DC numbers for death are same as in DCNum variable
+#                         , only Life controls are unique
 
 
-## The seed was NOT set any random variables  ----
+
+
+## The seed was NOT set since NO random variables were used!  ----
 
 ## The variables used in the result section ------------------------------------
 # sent - DV
@@ -161,7 +170,7 @@ str(d)
 
 
 .center[
-# (b) Main variables relevant to the causal problem
+# Main variables relevant to the causal problem
 ]
 
 
@@ -214,34 +223,64 @@ g + theme_xaringan(title_font_size = 18, text_font_size = 14, ) +
 
 
 .center[
-# (c) Study design
+# The pipeline
 ]
+
+
+.pull-left[
+
+**Study design**.
 
 The study is a a natural (*quasi-experimental*) observational experiment.
-![](https://raw.githubusercontent.com/JonHlynsson/Psych/main/Images/StudyDesign.jpg)
+
+```{r, echo=FALSE}
+library(DiagrammeR)
+fig <- grViz(diagram = "digraph flowchart {
+  graph [layout = dot, rankdir = TB]
+  node [fontname = arial, shape = box, color = '#1381B0', style = 'filled']
+  tab1 [label = 'Selection of inmate pictures matched for race (N@_{Total}= 742; N@_{Death}= 371, N@_{Life}= 371)', fontcolor = '#f0f0f0']
+  tab2 [label = 'Research assistant coded\\n glasses and tattoos', fontcolor = '#f0f0f0']
+  tab3 [label = 'Raters judge inmates on trustworthiness (N = 208);\\nRaters judge covariates (N = 141)', fontcolor = '#f0f0f0']
+  tab4 [label = 'Facial width-to-height ratio\\n (fWHR) measured', fontcolor = '#f0f0f0']
+  tab5 [label = 'Data analysis', shape = 'oval', fontcolor = '#f0f0f0']
+  
+  tab1 -> tab2 -> tab5 [arrowhead = vee]
+  tab1 -> tab3 -> tab5 [arrowhead = vee]
+  tab1 -> tab4 -> tab5 [arrowhead = vee]
+  
+  
+}
+  ")
+fig
+           
+           
+```
 
 
-
----
-
-
-.center[
-# (d) Threats to validity and design tricks for improved validity.
+```{r, out.width="150%", out.height="300%", echo=FALSE}
+fig
+```
 ]
+
+
+
+--
+
+
+.pull-right[
+**Threats to validity and design tricks for improved validity.**
+
 
 -   No information concerning the scales for afrocentricity, attractiveness, facial maturity
 -   Few participants with tattoos and glasses
 
 
---
-
 
 Design element: **Nonequivalent dependent variable**
 
---
 -   e.g., how ***friendly*** does the inmate look
 -   e.g., how ***happy*** does the inmate look
-
+]
 
 
 ???
@@ -318,12 +357,20 @@ model_2_stats
 
 
 .center[
-# (e) Key result
+# Key result
 ]
 
 .pull-left[
--   **Model 1**: Targets perceived as less trustworthy were more likely to be sentenced to death.
--   **Model 2**: Along with trustworthiness, Afrocentricity was negatively associated with the death sentence and fWHR and the presence of glasses were positively associated with the death sentence.
+**Model 1**: Targets perceived as less trustworthy were more likely to be sentenced to death.<br>
+**Model 2**: Along with trustworthiness, Afrocentricity was negatively associated with the death sentence and fWHR and the presence of glasses were positively associated with the death sentence.
+
+**Effect size estimate(s)**
+-   $OR$ was used as effect size for the individual predictors tested 
+-   Compatibility intervals for $OR$ was reported
+-   $\Delta{\text{x}^{2}}$ was used to test the fit of the models
+-   $R^2$ could have been reported to show variance elucidation in general
+-   Since $\eta_{\text{p}}^{2}$ always carries a positive bias, they could have also reported  $\omega^{2}$ 
+
 ]
 
 .pull-right[
@@ -353,28 +400,9 @@ Models %>% kable(digits = 2, align = c("l", "c", "c", "c"), format = "html",
 ]
 
 
----
-
-.center[
-# (f) Effect size estimate(s)
-]
-
-**ANOVA**–Partial eta squared: $\eta_{\text{p}}^{2}$
-
-
--   $OR$ was used as effect size for the individual predictors tested 
-
--   Compatibility intervals for $OR$ was reported
-
--   $\Delta{\text{x}^{2}}$ was used to test the fit of the models
-
--   $R^2$ could have been reported to show variance elucidation in general
-
--   Since $\eta_{\text{p}}^{2}$ always carries a positive bias, they could have also reported  $\omega^{2}$ 
-
-
 ???
 
+**ANOVA**–Partial eta squared: $\eta_{\text{p}}^{2}$
 OR > 1 means an increasement in Odds, and OR  < 1 means a decreasement in Odds
 
 $\Delta{\text{x}^{2}}$: (Does the data deviate significantly from the assumptions of the model? -> Significance shows that the model does not fit well)
@@ -498,7 +526,11 @@ class: inverse center middle
 
 # Conclusion 
 
+--
+
 ### Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes 
+--
+
 
 <br><br>
 ### Thank you for your attention
