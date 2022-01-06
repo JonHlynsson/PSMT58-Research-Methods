@@ -7,7 +7,7 @@ date: '`r Sys.Date()`'
 institute: "Stockholm University"
 output:
   xaringan::moon_reader:
-    css: [xaringan-themer.css, slidescss.css]
+    css: xaringan-themer.css
     self_contained: true
     seal: false
     nature:
@@ -261,7 +261,7 @@ fig
 **Threats to validity and design tricks for improved validity.**
 
 
--   No information concerning the scales for afrocentricity, attractiveness, facial maturity
+-   No information concerning the scales for Afrocentricity, attractiveness, facial maturity
 -   Few participants with tattoos and glasses
 
 
@@ -297,32 +297,14 @@ sent_new <- as.numeric(d$sent)
 sent_new <- sent_new - 1
 summary(sent_new) # sanity check - to check if it worked
 
-## model 1 
+## model 1 ----
 glm1 <- glm(formula = sent ~ trust, data = d, family = binomial(link = "logit"))
 summary(glm1)
 
 # Use exp function to get the odds ratio and confinit for CI - use cbind to 
 # display  both together
-model_1_stats <- exp(cbind(OR = (coef(glm1)), confint(glm1, level = 0.95))) 
-model_1_stats
+model_1_stats <- exp(cbind(OR = (coef(glm1)), confint(glm1, level = 0.95)))
 
-##  Bayesian analysis for model 1 - this is not used in the presentation and 
-# is done to further our own understanding of the data 
-
-B_glm1 <- stan_glm(formula = sent ~ trust, data = d, family = "binomial", 
-                   refresh = F, seed = 123)
-summary(B_glm1)
-
-# Use exp function to get the odds ratio and posterior_interval for CI - use 
-# cbind to display both together
-model_1_Bays_stats <- exp(cbind(OR = coef(B_glm1), posterior_interval(B_glm1))) 
-```
-
-```{r, echo=F, warning=FALSE, message=F, include=F}
-kable(model_1_stats, caption = "model 1") %>% kable_styling(html_font = "Times", full_width = F)
-```
-
-```{r, echo=FALSE, results='hide', message=F}
 ## Model 2 -----
 glm2 <- glm(sent ~ trust + 
                    zAfro + 
@@ -342,7 +324,6 @@ summary(glm2) # not exactly the same results but close:
 #                     it!
 
 model_2_stats <- exp(cbind(OR = coef(glm2), confint(glm2))) # 
-model_2_stats
 ```
 
 
@@ -411,104 +392,63 @@ Yigit, S., & Mendes, M. (2018). Which effect size measure is appropriate for one
 
 
 ---
-class: inverse center middle
 
+
+.center[
 # Strengths and weaknesses.
-
----
-
-.center[
-# Strengths 
 ]
 
 --
 
+.pull-left[
+**Strengths**
 
-**Real inmates**: Construct validity & External validity 
-
-???
--> People who have actually been convicted are used in the study. Actual measurement of inmates means that we are measuring people who have been convicted
-
---
-
-**Matching**: Internal/Construct validity 
-
-???
--> They have equal groups and pave the way for making causal inferences
-
---
-
-**Grayscale images**: Construct validity 
-
-???
--> Death sentence and life sentence inmates wear different colored clothes; thus grayscale images hinder the possibility of participants guessed/knew what sentence inmates received a priori. This constitutes blinding of outcome among raters.
-
---
-
-**Well defined sample**, restricted on sex and race: Internal validity/Construct validity 
-
-???
-Almost complete "population" of death sentenced inmates in sample (given sex and race). Big sample size (observations among participants) which increases our confidence in the causal conclusion.
-
---
-
-**Different raters for trustworthiness and covariates**: Construct validity
-
-???
-The ratings of trust don't affect the ratings of the covariates (continuation of "biased" pattern does not continue (IF there was a pattern))
-
----
-.center[
-# Weaknesses
+- **Real inmates**: Construct validity & External validity 
+- **Matching**: Internal/Construct validity 
+- **Grayscale images**: Construct validity 
+- **Well defined sample**, restricted on sex and race: Internal validity/Construct validity 
+- **Different raters for trustworthiness and covariates**: Construct validity
 ]
 
+???
+**Real inmates**: People who have actually been convicted are used in the study. Actual measurement of inmates means that we are measuring people who have been convicted
+
+**Matching**: They have equal groups and pave the way for making causal inferences
+
+**Grayscale images**: Death sentence and life sentence inmates wear different colored clothes; thus grayscale images hinder the possibility of participants guessed/knew what sentence inmates received a priori. This constitutes blinding of outcome among raters.
+
+**Well defined sample**: Almost complete "population" of death sentenced inmates in sample (given sex and race). Big sample size (observations among participants) which increases our confidence in the causal conclusion.
+
+**Different raters for trustworthiness and covariates**: The ratings of trust don't affect the ratings of the covariates (continuation of "biased" pattern does not continue (IF there was a pattern))
+
+
 --
 
-**Unequal inmates with glasses and tattoos** making them hard to infer about
+.pull-right[
+**Weaknesses**
+
+- **Unequal inmates with glasses and tattoos** making them hard to infer about
+- **Low Cronbach’ s Alpha**: Statistical conclusion validity 
+- **Info given to participants unclear**: Internal/Construct validity 
+- **Photos taken after sentencing**: Internal validity 
+  - *Reverse causation* is a possibility here. 
+- **Age not controlled for**: Internal/Construct validity 
+]
 
 ???
-All types of validity ->
+**Unequal inmates with glasses and tattoos**: All types of validity ->
 - 14 people with tattoos [7/7 in each group]
 - 115 with glasses [50/65 in each group]
 - 742 observations in total 
 
---
-
-**Low Cronbach’ s Alpha**: Statistical conclusion validity 
-
-???
-
--> .72 for trust which has the highest coefficient of determination $R^2$ 
+**Low Cronbach’ s Alpha**: .72 for trust which has the highest coefficient of determination $R^2$ 
 Note: 8 point scale, it is perhaps unintuitive – however using a finer scale leads to a loss in variability in the answers.
 
---
+**Info given to participants unclear**: Hard to replicate this study, even given data and OS, on the basis that we have no clue what prior to the study about the inmates
 
-**Info given to participants unclear**: Internal/Construct validity 
+**Photos taken after sentencing**: Perhaps a death sentence has an effect on perceived trustworthiness compared to life sentence. 
 
-???
-Hard to replicate this study, even given data and OS, on the basis that we have no clue what prior to the study about the inmates
-
---
-
-**Photos taken after sentencing**: Internal validity 
-
-???
--> Perhaps a death sentence has an effect on perceived trustworthiness compared to life sentence. 
-
-
---
-
-
-- *Reverse causation* is a possibility here. 
-
-
---
-
-**Age not controlled for**: Internal/Construct validity 
-
-
-???
-Potential confounder; IF it is a confounder, then it is related to BOTH outcome) and exposure
+**Age not controlled for**: Potential confounder; IF it is a confounder, then it is related to BOTH outcome) and exposure
 
 
 ---
