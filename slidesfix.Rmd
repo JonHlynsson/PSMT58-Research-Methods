@@ -7,7 +7,7 @@ date: '`r Sys.Date()`'
 institute: "Stockholm University"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: [xaringan-themer.css, slidescss.css]
     self_contained: true
     seal: false
     nature:
@@ -230,34 +230,24 @@ g + theme_xaringan(title_font_size = 18, text_font_size = 14, ) +
 .pull-left[
 
 **Study design**.
-
-The study is a a natural (*quasi-experimental*) observational experiment.
-
-```{r, echo=FALSE}
+The study is a a natural (<span style="white-space:nowrap">*quasi-experimental*</span>) observational experiment.
+```{r, echo=FALSE, out.width="150%"}
 library(DiagrammeR)
 fig <- grViz(diagram = "digraph flowchart {
-  graph [layout = dot, rankdir = TB]
+  graph [layout = dot, rankdir = TD]
   node [fontname = arial, shape = box, color = '#1381B0', style = 'filled']
-  tab1 [label = 'Selection of inmate pictures matched for race (N@_{Total}= 742; N@_{Death}= 371, N@_{Life}= 371)', fontcolor = '#f0f0f0']
-  tab2 [label = 'Research assistant coded\\n glasses and tattoos', fontcolor = '#f0f0f0']
-  tab3 [label = 'Raters judge inmates on trustworthiness (N = 208);\\nRaters judge covariates (N = 141)', fontcolor = '#f0f0f0']
-  tab4 [label = 'Facial width-to-height ratio\\n (fWHR) measured', fontcolor = '#f0f0f0']
-  tab5 [label = 'Data analysis', shape = 'oval', fontcolor = '#f0f0f0']
+  tab1 [label = 'Selection of \\ninmate pictures\\n matched for race', fontcolor = '#f0f0f0', style='rounded, filled']
+  tab2 [label = '(N@_{Total}= 742; N@_{Death}= 371, N@_{Life}= 371)', fontcolor = '#f0f0f0', style='rounded, filled']
+  tab3 [label = 'Research assistant\\n coded\\n glasses and tattoos', fontcolor = '#f0f0f0', style='rounded, filled']
+  tab4 [label = 'Raters judge inmates on\\n trustworthiness (N = 208);\\nRaters judge \\ncovariates (N = 141)', fontcolor = '#f0f0f0', style='rounded, filled']
+  tab5 [label = 'Facial width-to-height \\nratio (fWHR) measured', fontcolor = '#f0f0f0', style='rounded, filled']
+  tab6 [label = 'Data analysis', shape = 'oval', fontcolor = '#f0f0f0']
   
-  tab1 -> tab2 -> tab5 [arrowhead = vee]
-  tab1 -> tab3 -> tab5 [arrowhead = vee]
-  tab1 -> tab4 -> tab5 [arrowhead = vee]
-  
-  
-}
-  ")
-fig
-           
-           
-```
-
-
-```{r, out.width="150%", out.height="300%", echo=FALSE}
+  tab1 -> tab2 [minlen =0]
+  tab2 -> tab3 -> tab6 [arrowhead = vee]
+  tab2 -> tab4 -> tab6 [arrowhead = vee]
+  tab2 -> tab5 -> tab6 [arrowhead = vee]       
+}")
 fig
 ```
 ]

@@ -4,7 +4,7 @@
     <title>Group assigment</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alicia Lenander Aleksandra Mandić Eva Dickmänken Hannah Logemann Jón Ingi Hlynsson" />
-    <meta name="date" content="2022-01-05" />
+    <meta name="date" content="2022-01-06" />
     <script src="site_libs/header-attrs/header-attrs.js"></script>
     <script src="site_libs/htmlwidgets/htmlwidgets.js"></script>
     <script src="site_libs/viz/viz.js"></script>
@@ -13,6 +13,7 @@
     <script src="site_libs/kePrint/kePrint.js"></script>
     <link href="site_libs/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="slidescss.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -37,7 +38,7 @@ Alicia Lenander&lt;br&gt;Aleksandra Mandić&lt;br&gt;Eva Dickmänken&lt;br&gt;Ha
 
 #### Stockholm University 
 
-#### Date last edited: 2022-01-05
+#### Date last edited: 2022-01-06
 
 ---
 
@@ -118,15 +119,9 @@ As can be seen in the figure, there was no interaction between race and trustwor
 .pull-left[
 
 **Study design**.
-
-The study is a a natural (*quasi-experimental*) observational experiment.
-
-<div id="htmlwidget-479970b8e6b5eb11a5f1" style="width:504px;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-479970b8e6b5eb11a5f1">{"x":{"diagram":"digraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [fontname = arial, shape = box, color = \"#1381B0\", style = \"filled\"]\n  tab1 [label = <Selection of inmate pictures matched for race (N<FONT POINT-SIZE=\"8\"><SUB>Total<\/SUB><\/FONT>= 742; N<FONT POINT-SIZE=\"8\"><SUB>Death<\/SUB><\/FONT>= 371, N<FONT POINT-SIZE=\"8\"><SUB>Life<\/SUB><\/FONT>= 371)>, fontcolor = \"#f0f0f0\"]\n  tab2 [label = \"Research assistant coded\\n glasses and tattoos\", fontcolor = \"#f0f0f0\"]\n  tab3 [label = \"Raters judge inmates on trustworthiness (N = 208);\\nRaters judge covariates (N = 141)\", fontcolor = \"#f0f0f0\"]\n  tab4 [label = \"Facial width-to-height ratio\\n (fWHR) measured\", fontcolor = \"#f0f0f0\"]\n  tab5 [label = \"Data analysis\", shape = \"oval\", fontcolor = \"#f0f0f0\"]\n  \n  tab1 -> tab2 -> tab5 [arrowhead = vee]\n  tab1 -> tab3 -> tab5 [arrowhead = vee]\n  tab1 -> tab4 -> tab5 [arrowhead = vee]\n  \n  \n}\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-
-
-<div id="htmlwidget-93f155adcd5f85c20187" style="width:150%;height:300%;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-93f155adcd5f85c20187">{"x":{"diagram":"digraph flowchart {\n  graph [layout = dot, rankdir = TB]\n  node [fontname = arial, shape = box, color = \"#1381B0\", style = \"filled\"]\n  tab1 [label = <Selection of inmate pictures matched for race (N<FONT POINT-SIZE=\"8\"><SUB>Total<\/SUB><\/FONT>= 742; N<FONT POINT-SIZE=\"8\"><SUB>Death<\/SUB><\/FONT>= 371, N<FONT POINT-SIZE=\"8\"><SUB>Life<\/SUB><\/FONT>= 371)>, fontcolor = \"#f0f0f0\"]\n  tab2 [label = \"Research assistant coded\\n glasses and tattoos\", fontcolor = \"#f0f0f0\"]\n  tab3 [label = \"Raters judge inmates on trustworthiness (N = 208);\\nRaters judge covariates (N = 141)\", fontcolor = \"#f0f0f0\"]\n  tab4 [label = \"Facial width-to-height ratio\\n (fWHR) measured\", fontcolor = \"#f0f0f0\"]\n  tab5 [label = \"Data analysis\", shape = \"oval\", fontcolor = \"#f0f0f0\"]\n  \n  tab1 -> tab2 -> tab5 [arrowhead = vee]\n  tab1 -> tab3 -> tab5 [arrowhead = vee]\n  tab1 -> tab4 -> tab5 [arrowhead = vee]\n  \n  \n}\n  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+The study is a a natural (&lt;span style="white-space:nowrap"&gt;*quasi-experimental*&lt;/span&gt;) observational experiment.
+<div id="htmlwidget-479970b8e6b5eb11a5f1" style="width:150%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-479970b8e6b5eb11a5f1">{"x":{"diagram":"digraph flowchart {\n  graph [layout = dot, rankdir = TD]\n  node [fontname = arial, shape = box, color = \"#1381B0\", style = \"filled\"]\n  tab1 [label = \"Selection of \\ninmate pictures\\n matched for race\", fontcolor = \"#f0f0f0\", style=\"rounded, filled\"]\n  tab2 [label = <(N<FONT POINT-SIZE=\"8\"><SUB>Total<\/SUB><\/FONT>= 742; N<FONT POINT-SIZE=\"8\"><SUB>Death<\/SUB><\/FONT>= 371, N<FONT POINT-SIZE=\"8\"><SUB>Life<\/SUB><\/FONT>= 371)>, fontcolor = \"#f0f0f0\", style=\"rounded, filled\"]\n  tab3 [label = \"Research assistant\\n coded\\n glasses and tattoos\", fontcolor = \"#f0f0f0\", style=\"rounded, filled\"]\n  tab4 [label = \"Raters judge inmates on\\n trustworthiness (N = 208);\\nRaters judge \\ncovariates (N = 141)\", fontcolor = \"#f0f0f0\", style=\"rounded, filled\"]\n  tab5 [label = \"Facial width-to-height \\nratio (fWHR) measured\", fontcolor = \"#f0f0f0\", style=\"rounded, filled\"]\n  tab6 [label = \"Data analysis\", shape = \"oval\", fontcolor = \"#f0f0f0\"]\n  \n  tab1 -> tab2 [minlen =0]\n  tab2 -> tab3 -> tab6 [arrowhead = vee]\n  tab2 -> tab4 -> tab6 [arrowhead = vee]\n  tab2 -> tab5 -> tab6 [arrowhead = vee]       \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 
