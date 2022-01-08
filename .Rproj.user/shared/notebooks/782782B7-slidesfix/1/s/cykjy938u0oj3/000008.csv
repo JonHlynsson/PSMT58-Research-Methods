@@ -1,4 +1,3 @@
-"0","library(ggpubr)"
 "0","# do an effects plot"
 "0","g <- ggline(data = d, "
 "0","       x = ""sent"", "

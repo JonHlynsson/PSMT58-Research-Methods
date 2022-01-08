@@ -22,8 +22,6 @@ output:
 options(htmltools.dir.version = FALSE)
 library(kableExtra)
 knitr::opts_chunk$set(
-  # fig.width=9, fig.height=6, fig.retina=3, dpi = 150,
-  # out.width = "150%",
   cache = FALSE,
   echo = TRUE,
   message = FALSE, 
@@ -93,7 +91,8 @@ In this presentation we will go over the main results, highlight its main findin
 rm(list = ls(all=T)) # remove all variables (all=T takes care of hidden objects)
 graphics.off() # turn off plots
 cat("\014") # clear the console
-## Code book ----
+
+## Code book -------------------------------------------------------------------
 # stim ->	Stimulus Number
 # sent ->	Sentence: 1 = Death, 0 = Life
 # race -> Race: 1 = White, -1 = Black
@@ -116,11 +115,11 @@ cat("\014") # clear the console
 #                         Only rated on trustworthiness (Trust2). 
 #                         All DC numbers for death are same as in DCNum variable
 #                         , only Life controls are unique
+## -----------------------------------------------------------------------------
 
 
 
-
-## The seed was NOT set since NO random variables were used!  ----
+## The seed was NOT set since NO random variables were used!  ------------------
 
 ## The variables used in the result section ------------------------------------
 # sent - DV
@@ -134,38 +133,38 @@ cat("\014") # clear the console
 ## -----------------------------------------------------------------------------
 
 
-## set working directory ----
-setwd("~/Stockholm University/semster 1/Research methods/Group assignment/Data")
-
 # Packages used ----------------------------------------------------------------
-library(tidyverse)
+library(tidyverse) # for handy selection of data
 library(ggpubr) # for creating easily publication ready plots
-library(rstanarm) # For Bayesian analysis 
 ## -----------------------------------------------------------------------------
 
 
 ## Read in data ----
-d_full <- read.table("Study1_Data_Hand_In.txt", header = TRUE, sep = ";")
+d_full <- read.table("https://raw.githubusercontent.com/JonHlynsson/PSMT58-Research-Methods/main/Study1_Data_Hand_In.txt", 
+                     header = TRUE, sep = ";")
 
 ## select the relevant variables to replicate study 1 ----
-d <- d_full[, c("race", "sent", "trust", "zAfro", "attract", "maturity", "zfWHR", "glasses", "tattoos")]
+d <- d_full[, c("race", "sent", "trust", "zAfro", "attract", "maturity", 
+                "zfWHR", "glasses", "tattoos")]
 ```
 
 ```{r, echo=F, results='hide'}
-## initial data screening ----
+## initial data screening ------------------------------------------------------
 str(d) # the structure of the dataset indicates that variables need re-coding:
 # sent needs to be a factor
 # glasses needs to be a factor
 # tattoos needs to be a factor
 # race needs to be a factor
+## -----------------------------------------------------------------------------
 
-# Re-code variables
+
+# Re-code variables ------------------------------------------------------------
 d$sent <- factor(d$sent, labels = c("Life", "Death"))
 d$race <- factor(d$race, labels = c("Black", "White"))
 d$glasses <- factor(d$glasses, labels = c("No_Glasses", "Yes_Glasses"))
 d$tattoos <- factor(d$tattoos, labels = c("No_Tattoos", "Yes_Tattoos"))
 str(d)
-## ---------
+## -----------------------------------------------------------------------------
 ```
 
 
@@ -202,7 +201,6 @@ As can be seen in the figure, there was no interaction between race and trustwor
 
 .pull-right[
 ```{r, echo=F, warning=FALSE, eval=requireNamespace("showtext", quietly=TRUE) && requireNamespace("ggplot2", quietly=TRUE)}
-library(ggpubr)
 # do an effects plot
 g <- ggline(data = d, 
        x = "sent", 
@@ -291,21 +289,25 @@ Essentially make the raters judge them on perceived happiness and trustworthines
 ---
 
 ```{r, echo=FALSE, results='hide', message=F}
-## Now let's do the logistic regression ----
+## Now let's do the logistic regression ----------------------------------------
 # turn off factors for DV
 sent_new <- as.numeric(d$sent)
 sent_new <- sent_new - 1
-summary(sent_new) # sanity check - to check if it worked
+summary(sent_new) # sanity check
+## -----------------------------------------------------------------------------
 
-## model 1 ----
+
+## model 1 ---------------------------------------------------------------------
 glm1 <- glm(formula = sent ~ trust, data = d, family = binomial(link = "logit"))
 summary(glm1)
 
 # Use exp function to get the odds ratio and confinit for CI - use cbind to 
 # display  both together
 model_1_stats <- exp(cbind(OR = (coef(glm1)), confint(glm1, level = 0.95)))
+## -----------------------------------------------------------------------------
 
-## Model 2 -----
+
+## Model 2 ---------------------------------------------------------------------
 glm2 <- glm(sent ~ trust + 
                    zAfro + 
                    attract + 
@@ -475,5 +477,9 @@ class: inverse center middle
 Wilson, J. P., & Rule, N. O. (2015). Facial Trustworthiness Predicts Extreme Criminal-Sentencing Outcomes. *Psychological Science, 26*(8), 1325–1331. https://doi.org/10.1177/0956797615590992
 
 
+```{r, echo=F}
+# to render the slides 
+# rmarkdown::render(input = "slidesfix.Rmd")
+```
 
 

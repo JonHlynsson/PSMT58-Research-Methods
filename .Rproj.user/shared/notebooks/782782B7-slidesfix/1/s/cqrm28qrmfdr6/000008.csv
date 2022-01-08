@@ -1,0 +1,21 @@
+"0","library(DiagrammeR)"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"0","fig <- grViz(diagram = ""digraph flowchart {"
+"0","  graph [layout = dot, rankdir = TD]"
+"0","  node [fontname = arial, shape = box, color = '#1381B0', style = 'filled']"
+"0","  tab1 [label = 'Selection of \\ninmate pictures\\n matched for race', fontcolor = '#f0f0f0', style='rounded, filled']"
+"0","  tab2 [label = '(N@_{Total}= 742; N@_{Death}= 371, N@_{Life}= 371)', fontcolor = '#f0f0f0', style='rounded, filled']"
+"0","  tab3 [label = 'Research assistant\\n coded\\n glasses and tattoos', fontcolor = '#f0f0f0', style='rounded, filled']"
+"0","  tab4 [label = 'Raters judge inmates on\\n trustworthiness (N = 208);\\nRaters judge \\ncovariates (N = 141)', fontcolor = '#f0f0f0', style='rounded, filled']"
+"0","  tab5 [label = 'Facial width-to-height \\nratio (fWHR) measured', fontcolor = '#f0f0f0', style='rounded, filled']"
+"0","  tab6 [label = 'Data analysis', shape = 'oval', fontcolor = '#f0f0f0']"
+"0","  "
+"0","  tab1 -> tab2 [minlen =0]"
+"0","  tab2 -> tab3 -> tab6 [arrowhead = vee]"
+"0","  tab2 -> tab4 -> tab6 [arrowhead = vee]"
+"0","  tab2 -> tab5 -> tab6 [arrowhead = vee]       "
+"0","}"")"
+"0","fig"

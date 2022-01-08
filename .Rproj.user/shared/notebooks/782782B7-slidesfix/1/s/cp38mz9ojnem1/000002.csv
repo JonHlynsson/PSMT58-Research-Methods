@@ -1,0 +1,2 @@
+"0","# to render the slides "
+"0","# rmarkdown::render(input = ""slidesfix.Rmd"")"
